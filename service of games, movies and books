@@ -1,0 +1,110 @@
+
+game = {}
+movies = {}
+books = {}
+
+question = int(input('Перейти в сервис: игр(1), фильмов(2), книг(3)'))
+
+
+def games():
+    a = int(input('Добавить(1), удалить(2), показать(3), выйти из сервиса(4)'))
+
+    if a == 1:
+        game_add = input('Какую игру хочешь добавить в список?')
+        game_rate = int(input('Поставь оценку игре'))
+        if game_rate > 10:
+            game_rate = 10
+        if game_rate < 0:
+            game_rate = 0
+        game[game_add] = game_rate
+        print(game, 'ваш список игр')
+
+    if a == 2:
+        del_game = input('Какую игру удалим?')
+        del game[del_game]
+        print(game, 'ваш список игр')
+
+    if a == 3:
+        print(game, 'ваш список  игр')
+
+    if a == 4:
+        question = int(input('Перейти в сервис: игр(1), фильмов(2), книг(3)'))
+
+        if question == 1:
+            games()
+        if question == 2:
+            movie()
+        if question == 3:
+            book()
+
+def movie():
+    a = int(input('Добавить(1), удалить(2), показать(3), выйти из сервиса(4)'))
+
+    if a == 1:
+        movie_add = input('Какой фильм хочешь добавить в список?')
+        movie_rate = int(input('Поставь оценку фильму'))
+        if movie_rate > 10:
+            movie_rate = 10
+        if movie_rate < 0:
+            movie_rate = 0
+        movies[movie_add] = movie_rate
+        print(movies, 'ваш список фильмов')
+
+    if a == 2:
+        del_movie = input('Какой фильм удалим?')
+        del movies[del_movie]
+        print(movies, 'ваш список фильмов')
+
+    if a == 3:
+        print(movies, 'ваш список фильмов')
+
+    if a == 4:
+        question = int(input('Перейти в сервис: игр(1), фильмов(2), книг(3)'))
+        if question == 1:
+            games()
+        if question == 2:
+            movie()
+        if question == 3:
+            book()
+
+def book():
+    a = int(input('Добавить(1), удалить(2), показать(3), выйти из сервиса(4)'))
+
+    if a == 1:
+        book_add = input('Какую книгу хочешь добавить в список?')
+        book_rate = int(input('Поставь оценку книге'))
+        if book_rate > 10:
+            book_rate = 10
+        if book_rate < 0:
+            book_rate = 0
+        books[book_add] = book_rate
+        print(books, 'ваш список книг')
+
+    if a == 2:
+        del_book = input('Какую книгу удалим?')
+        del books[del_book]
+        print(books, 'ваш список книг')
+
+    if a == 3:
+        print(books, 'ваш список книг')
+
+    if a == 4:
+        question = int(input('Перейти в сервис: игр(1), фильмов(2), книг(3)'))
+
+        if question == 1:
+            games()
+        if question == 2:
+            movie()
+        if question == 3:
+            book()
+
+while True:
+
+    if question == 1:
+        games()
+
+    if question == 2:
+        movie()
+
+    if question == 3:
+        book()
